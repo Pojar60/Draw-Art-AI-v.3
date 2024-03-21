@@ -1,19 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/_2222"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/orange"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:iss_auto_cycle="true"
+                app:iss_corner_radius="20"
+                app:iss_delay="1000"
+                app:iss_period="5000"
+                app:iss_title_background="@drawable/gradient" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardView"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/cardView"
+                android:id="@+id/nestedScrollView">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/_bronik" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="ПРИРОДА"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/_bronik" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="АНИМЕ"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/_bronik" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="ЗНАМЕНИТОСНИ"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/_bronik" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="ГОРОДА"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/_bronik" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="ЖИВОТНЫЕ"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/_bronik" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:text="МУЛЬТФИЛЬМЫ"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridview"
+            android:numColumns="2"/>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

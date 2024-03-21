@@ -1,5 +1,9 @@
 [versions]
-agp = "8.4.0-alpha13"
+agp = "8.5.0-alpha01"
+circleimageview = "3.1.0"
+coreKtx = "1.12.0"
+glide = "4.14.2"
+imageslideshow = "0.1.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -7,8 +11,14 @@ appcompat = "1.6.1"
 material = "1.11.0"
 activity = "1.8.2"
 constraintlayout = "2.1.4"
+roundedimageview = "2.3.0"
 
 [libraries]
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+imageslideshow = { module = "com.github.denzcoskun:ImageSlideshow", version.ref = "imageslideshow" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -16,6 +26,7 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+roundedimageview = { module = "com.makeramen:roundedimageview", version.ref = "roundedimageview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
