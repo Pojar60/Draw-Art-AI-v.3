@@ -2,6 +2,8 @@
 agp = "8.5.0-alpha01"
 circleimageview = "3.1.0"
 coreKtx = "1.12.0"
+firebaseFirestoreVersion = "24.0.0"
+firebaseStorageVersion = "20.0.0"
 glide = "4.14.2"
 imageslideshow = "0.1.0"
 junit = "4.13.2"
@@ -12,11 +14,17 @@ material = "1.11.0"
 activity = "1.8.2"
 constraintlayout = "2.1.4"
 roundedimageview = "2.3.0"
+firebaseDatabase = "20.3.1"
+googleGmsGoogleServices = "4.4.1"
+firebaseStorage = "20.3.0"
+firebaseFirestore = "24.11.0"
 
 [libraries]
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+firebase-firestore-v2400 = { module = "com.google.firebase:firebase-firestore", version.ref = "firebaseFirestoreVersion" }
+firebase-storage-v2000 = { module = "com.google.firebase:firebase-storage", version.ref = "firebaseStorageVersion" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 imageslideshow = { module = "com.github.denzcoskun:ImageSlideshow", version.ref = "imageslideshow" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -27,7 +35,11 @@ material = { group = "com.google.android.material", name = "material", version.r
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 roundedimageview = { module = "com.makeramen:roundedimageview", version.ref = "roundedimageview" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

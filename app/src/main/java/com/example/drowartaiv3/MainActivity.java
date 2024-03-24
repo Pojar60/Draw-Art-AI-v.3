@@ -1,8 +1,10 @@
 package com.example.drowartaiv3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -13,13 +15,24 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.drowartaiv3.databinding.ActivityMainBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.Firebase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    FloatingActionButton floatingActionButton;
+
     ActivityMainBinding binding;
     private boolean isSliderVisible = true;
 
+
+    GridView gridView;
+    ArrayList<DataClass>  dataList;
+    MyAdapter adapter;
+    final private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Images");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        floatingActionButton = findViewById(R.id.fab);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UploadActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         ImageSlider imageSlider = findViewById(R.id.imageSlider);
         ArrayList<SlideModel> sliceModels = new ArrayList<>();
@@ -40,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
         String[] imageName = {"1", "2", "3", "4", "5", "6", "7"," 8"};
         int[] image = {R.drawable.nature3, R.drawable.nature4, R.drawable.nature5, R.drawable.nature6, R.drawable.nature7, R.drawable.nature9, R.drawable.nature10, R.drawable.nature_2,};
-
 
 
 

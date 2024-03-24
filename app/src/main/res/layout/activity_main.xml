@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="@drawable/_2222">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/_2222"
+
         tools:context=".MainActivity">
 
         <androidx.cardview.widget.CardView
@@ -44,10 +46,10 @@
             android:orientation="horizontal">
 
             <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/cardView"
-                android:id="@+id/nestedScrollView">
+                android:layout_below="@id/cardView">
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -236,19 +238,39 @@
                                     android:textSize="12sp" />
 
 
+
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
-
+<!--                        <GridView-->
+<!--                            android:id="@+id/gridview"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:numColumns="2" />-->
 
                     </LinearLayout>
                 </HorizontalScrollView>
             </androidx.core.widget.NestedScrollView>
         </LinearLayout>
 
-        <GridView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/gridview"
-            android:numColumns="2"/>
+                <GridView
+                    android:id="@+id/gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:numColumns="2"
+                    android:layout_below="@id/linearLayout"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/orange"
+            android:src="@drawable/baseline_add_24"
+            app:tint="@color/white" />
+
+
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
