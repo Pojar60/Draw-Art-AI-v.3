@@ -47,7 +47,7 @@ public class MyAdapter extends BaseAdapter {
         }
         ImageView gridImage = convertView.findViewById(R.id.dridImage);
 
-//        Glide.with(context).load(dataList.get(i).getImageUrl().into(gridImage));
+        Glide.with(context).load(dataList.get(position).getImageUrl()).into(gridImage);
 
         return convertView;
     }

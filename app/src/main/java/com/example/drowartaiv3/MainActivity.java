@@ -8,6 +8,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 
@@ -17,8 +18,11 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.drowartaiv3.databinding.ActivityMainBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -42,6 +46,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         floatingActionButton = findViewById(R.id.fab);
+        gridView = findViewById(R.id.gridview);
+
+
+        dataList = new ArrayList<>();
+        adapter = new MyAdapter(dataList, this);
+        gridView.setAdapter(adapter);
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    DataClass dataClass = dataSnapshot.getValue(DataClass.class);
+                    dataList.add(dataClass);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
