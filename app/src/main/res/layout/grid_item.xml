@@ -10,12 +10,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:cardElevation="20dp"
+
         app:cardCornerRadius="20dp">
 
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
+            app:cardElevation="5dp"
             android:id="@+id/dridImage"
             android:scaleType="centerCrop"/>
 

@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/orange"
                 app:cardCornerRadius="20dp"
@@ -59,7 +59,7 @@
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="1dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -270,9 +270,11 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="30dp"
-                android:background="@color/orange"
                 android:src="@drawable/baseline_add_24"
-                app:tint="@color/black" />
+                app:backgroundTint="@color/orange"
+            app:rippleColor="@color/black"
+            android:foreground="?android:attr/selectableItemBackground"
+                 />
         </RelativeLayout>
 
 

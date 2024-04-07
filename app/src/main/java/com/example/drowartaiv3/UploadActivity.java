@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -45,6 +46,8 @@ public class UploadActivity extends AppCompatActivity {
     EditText uploadText;
     ProgressBar progressBar;
 
+
+
     private Uri imageUri;
     final private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Images");
     final private StorageReference storageReference = FirebaseStorage.getInstance().getReference();
@@ -66,6 +69,24 @@ public class UploadActivity extends AppCompatActivity {
         uploadText = findViewById(R.id.editText);
         uploadImage = findViewById(R.id.uploadLogo);
         progressBar.setVisibility(View.VISIBLE);
+
+
+        Button backButton = findViewById(R.id.back_button);
+backButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        try {
+            Intent intent = new Intent(UploadActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e){
+
+        }
+
+    }
+});
+
+
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
                     @Override
