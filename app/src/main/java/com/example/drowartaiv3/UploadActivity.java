@@ -46,8 +46,6 @@ public class UploadActivity extends AppCompatActivity {
     EditText uploadText;
     ProgressBar progressBar;
 
-
-
     private Uri imageUri;
     final private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Images");
     final private StorageReference storageReference = FirebaseStorage.getInstance().getReference();

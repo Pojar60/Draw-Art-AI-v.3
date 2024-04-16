@@ -1,6 +1,7 @@
 package com.example.drowartaiv3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,16 @@ public class MyAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.grid_item, null);
         }
         ImageView gridImage = convertView.findViewById(R.id.dridImage);
-
+//        ImageView gridImage = convertView.findViewById(R.id.dridImage);
+        gridImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, WebViewActivity.class);
+                // Передайте URL или другие данные в WebViewActivity
+                intent.putExtra("url", "file:///android_asset/index_6.html"); // Предполагается, что DataClass имеет метод getUrl()
+                context.startActivity(intent);
+            }
+        });
         Glide.with(context).load(dataList.get(position).getImageUrl()).into(gridImage);
 
         return convertView;

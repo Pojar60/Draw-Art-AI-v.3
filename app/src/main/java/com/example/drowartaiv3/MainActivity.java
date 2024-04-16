@@ -132,4 +132,6 @@ public class MainActivity extends AppCompatActivity {
             isSliderVisible = true;
         }
     }
+
+
 }
