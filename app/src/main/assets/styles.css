@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#svgContainer {
+    overflow: hidden;
+    height: calc(100% - 50px);
+    touch-action: none;
+    position: relative;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+.scrollmenu {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: #646464;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    align-items: center; /* Центрирование кнопок по вертикали */
+}
+
+.color-button {
+    flex: 0 0 auto;
+    width: 20px; /* Уменьшенный диаметр кнопок */
+    height: 20px;
+    margin: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: transform 0.1s; /* Анимация трансформации */
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.6);
+}
+
+.color-button.active {
+    transform: scale(1.2); /* Увеличение размера активной кнопки */
+}
+
+.color-button:hover {
+    background-color: #3F362B;
+}
+
+.color-button:active {
+    box-shadow: 0 0 8px white;
+}
