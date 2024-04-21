@@ -45,42 +45,42 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        floatingActionButton = findViewById(R.id.fab);
-        gridView = findViewById(R.id.gridview);
+//        floatingActionButton = findViewById(R.id.fab);
+//        gridView = findViewById(R.id.gridview);
 
 
-        dataList = new ArrayList<>();
-        adapter = new MyAdapter(dataList, this);
-        gridView.setAdapter(adapter);
+//        dataList = new ArrayList<>();
+//        adapter = new MyAdapter(dataList, this);
+//        gridView.setAdapter(adapter);
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    DataClass dataClass = dataSnapshot.getValue(DataClass.class);
-                    dataList.add(dataClass);
-                }
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+//                    DataClass dataClass = dataSnapshot.getValue(DataClass.class);
+//                    dataList.add(dataClass);
+//                }
+//                adapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
 
 
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UploadActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
+
+//        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Intent intent = new Intent(MainActivity.this, UploadActivity.class);
+////                startActivity(intent);
+////                finish();
+//            }
+//        });
 
         ImageSlider imageSlider = findViewById(R.id.imageSlider);
         ArrayList<SlideModel> sliceModels = new ArrayList<>();
@@ -96,42 +96,42 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        binding.nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if (scrollY > oldScrollY) {
-                    // Прокрутка вниз
-                    hideSliderAndScrollHorizontal();
-                } else if (scrollY < oldScrollY) {
-                    // Прокрутка вверх
-                    showSliderAndScrollHorizontal();
-                }
-            }
-        });
+//        binding.nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+//            @Override
+//            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//                if (scrollY > oldScrollY) {
+//                    // Прокрутка вниз
+//                    hideSliderAndScrollHorizontal();
+//                } else if (scrollY < oldScrollY) {
+//                    // Прокрутка вверх
+//                    showSliderAndScrollHorizontal();
+//                }
+//            }
+//        });
     }
 
-    private void hideSliderAndScrollHorizontal() {
-        if (isSliderVisible) {
-            binding.imageSlider.setVisibility(View.GONE);
-            binding.nestedScrollView.scrollTo(0, 0); // Скролл в начало NestedScrollView
-            binding.linearLayout.setLayoutParams(new NestedScrollView.LayoutParams(
-                    NestedScrollView.LayoutParams.MATCH_PARENT,
-                    NestedScrollView.LayoutParams.MATCH_PARENT
-            ));
-            isSliderVisible = false;
-        }
-    }
+//    private void hideSliderAndScrollHorizontal() {
+//        if (isSliderVisible) {
+//            binding.imageSlider.setVisibility(View.GONE);
+//            binding.nestedScrollView.scrollTo(0, 0); // Скролл в начало NestedScrollView
+//            binding.linearLayout.setLayoutParams(new NestedScrollView.LayoutParams(
+//                    NestedScrollView.LayoutParams.MATCH_PARENT,
+//                    NestedScrollView.LayoutParams.MATCH_PARENT
+//            ));
+//            isSliderVisible = false;
+//        }
+//    }
 
-    private void showSliderAndScrollHorizontal() {
-        if (!isSliderVisible) {
-            binding.imageSlider.setVisibility(View.VISIBLE);
-            binding.linearLayout.setLayoutParams(new NestedScrollView.LayoutParams(
-                    NestedScrollView.LayoutParams.MATCH_PARENT,
-                    NestedScrollView.LayoutParams.WRAP_CONTENT
-            ));
-            isSliderVisible = true;
-        }
-    }
+//    private void showSliderAndScrollHorizontal() {
+//        if (!isSliderVisible) {
+//            binding.imageSlider.setVisibility(View.VISIBLE);
+//            binding.linearLayout.setLayoutParams(new NestedScrollView.LayoutParams(
+//                    NestedScrollView.LayoutParams.MATCH_PARENT,
+//                    NestedScrollView.LayoutParams.WRAP_CONTENT
+//            ));
+//            isSliderVisible = true;
+//        }
+//    }
 
 
 }
