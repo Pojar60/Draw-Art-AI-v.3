@@ -46,6 +46,8 @@
     <!--      align-items: center;-->
     <!--  }-->
     <!-- </style>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg-pan-zoom/3.6.1/svg-pan-zoom.min.js"></script>
+
 </head>
 <body>
 <div id="svgContainer">
@@ -679,6 +681,21 @@
     }
 </script>
 <script src="script.js" defer></script>
+<script>
+    window.onload = function() {
+      // Инициализация svg-pan-zoom на SVG элементе
+      var svgElement = document.querySelector('svg');
+      var panZoomInstance = svgPanZoom(svgElement, {
+        zoomEnabled: true,
+        controlIconsEnabled: false, // Можно скрыть или показать кнопки управления масштабом
+        fit: false,
+        center: true,
+        contain: false,
+        minZoom: 0.1,
+        maxZoom: 10
+      });
+    };
+</script>
 
 </body>
 </html>

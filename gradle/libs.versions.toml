@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0-alpha01"
+agp = "8.4.0-rc02"
 circleimageview = "3.1.0"
 coreKtx = "1.12.0"
 firebaseFirestoreVersion = "24.0.0"
