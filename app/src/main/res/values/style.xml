@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Стиль для TabLayout -->
+    <style name="MyCustomTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+        <item name="tabTextColor">@color/colorPrimary</item>
+        <item name="tabBackground">@color/colorPrimaryLight</item>
+    </style>
+
+    <!-- Стиль для текста вкладок -->
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <color name="colorAccent">#F44336</color>
+    <color name="colorPrimaryDark">#F44336</color>
+    <color name="colorPrimary">#73DA18</color>
+    <color name="colorPrimaryLight">#7307D3</color>
+</resources>
