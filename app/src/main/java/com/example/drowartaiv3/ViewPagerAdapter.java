@@ -15,8 +15,8 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0: return new Anime();
-            case 1: return new Nature();
-            case 2: return new Cartoons();
+            case 1: return new Cartoons();
+            case 2: return new Nature();
             default: return new Anime();
 
 

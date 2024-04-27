@@ -1,22 +1,23 @@
 package com.example.drowartaiv3;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+
 import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
-public class ImageAdapter extends BaseAdapter {
+public class ImageAdapterCartoons extends BaseAdapter {
 
     private ArrayList<DataClass> dataList;
     private Context context;
     LayoutInflater layoutInflater;
 
-    public ImageAdapter(ArrayList<DataClass> dataList, Context context) {
+    public ImageAdapterCartoons(ArrayList<DataClass> dataList, Context context) {
         this.dataList = dataList;
         this.context = context;
     }

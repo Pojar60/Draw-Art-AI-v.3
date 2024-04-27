@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,20 +20,41 @@ import java.util.ArrayList;
 
 public class Anime extends Fragment {
     private GridView gridView;
-    private ImageAdapter imageAdapter;
+    private ImageAdapterAnime imageAdapterAnime;
     private ArrayList<DataClass> dataList;
+    private int savedScrollPosition = 0;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_anime, container, false);
         gridView = view.findViewById(R.id.gridviewAnime);
         dataList = new ArrayList<>();
-        imageAdapter = new ImageAdapter(dataList, getContext());
-        gridView.setAdapter(imageAdapter);
+        imageAdapterAnime = new ImageAdapterAnime(dataList, getContext());
+        gridView.setAdapter(imageAdapterAnime);
         loadData();
+        if (savedInstanceState != null) {
+            savedScrollPosition = savedInstanceState.getInt("scrollPosition", 0);
+        }
         return view;
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        gridView.setSelection(savedScrollPosition); // Восстановление позиции прокрутки
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        savedScrollPosition = gridView.getFirstVisiblePosition(); // Сохранение позиции прокрутки
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("scrollPosition", gridView.getFirstVisiblePosition()); // Сохранение позиции в состоянии
+    }
     private void loadData() {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Images");
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -45,7 +65,9 @@ public class Anime extends Fragment {
                     DataClass dataClass = dataSnapshot.getValue(DataClass.class);
                     dataList.add(dataClass);
                 }
-                imageAdapter.notifyDataSetChanged();
+                imageAdapterAnime.notifyDataSetChanged();
+                gridView.setSelection(savedScrollPosition); // Восстановление позиции после загрузки данных
+
             }
 
             @Override

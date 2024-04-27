@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Images");
+//    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Images_3");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,25 +70,5 @@ public class MainActivity extends AppCompatActivity {
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
 
-//    private void setupFirebaseDataListener() {
-//        imageAdapter = new ImageAdapter(dataList, this);
-//        binding.gridView.setAdapter(imageAdapter);
-//
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                dataList.clear(); // Очищаем список, чтобы избежать дублирования данных
-//                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-//                    DataClass dataClass = dataSnapshot.getValue(DataClass.class);
-//                    dataList.add(dataClass);
-//                }
-//                imageAdapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Log.e("MainActivity", "Failed to read value.", error.toException());
-//            }
-//        });
-//    }
+
 }
