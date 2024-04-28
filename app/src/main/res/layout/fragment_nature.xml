@@ -3,12 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Nature">
+    tools:context=".Nature"
+    android:id="@+id/frameLayoutNature">
+
+
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="Природа" />-->
+    <GridView
+        android:id="@+id/gridviewNature"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Природа" />
-
+        android:numColumns="2" />
 </FrameLayout>
