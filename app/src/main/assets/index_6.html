@@ -636,7 +636,33 @@
             data-filled="0">0%
     </button>
 </div>
+<div class="button-container">
+    <button onclick="zoomIn()">Zoom In</button>
+    <button onclick="zoomOut()">Zoom Out</button>
+</div>
 <script src="script.js"></script>
+<script>
+    var panZoomInstance;
+
+    window.onload = function() {
+        panZoomInstance = svgPanZoom('svg', {
+            zoomEnabled: true,
+            controlIconsEnabled: false,
+            fit: true,
+            center: true,
+            minZoom: 0.1,
+            maxZoom: 10
+        });
+    };
+
+    function zoomIn() {
+        panZoomInstance.zoomIn();
+    }
+
+    function zoomOut() {
+        panZoomInstance.zoomOut();
+    }
+</script>
 <script>
     let selectedColor = '';
 

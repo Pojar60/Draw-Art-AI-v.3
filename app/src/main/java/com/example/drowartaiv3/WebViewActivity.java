@@ -32,7 +32,7 @@ public class WebViewActivity extends AppCompatActivity {
         webSettings.setLoadWithOverviewMode(true); // Загружать WebView, охватывая содержимое в ширину экрана
         webSettings.setUseWideViewPort(true); // Поддержка мета-тега "viewport" в HTML
         webSettings.setSupportZoom(true); // Отключение поддержки масштабирования
-        webSettings.setBuiltInZoomControls(false); // Отключение элементов управления масштабом
+        webSettings.setBuiltInZoomControls(true); // Включает встроенные элементы управления масштабированием
         webSettings.setDisplayZoomControls(false);
 //        webView.setInitialScale(50);
 

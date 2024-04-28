@@ -4,12 +4,14 @@ body, html {
     overflow: hidden;
 }
 
-#svgContainer {
-    overflow: hidden;
-    height: calc(100% - 50px);
-    touch-action: none;
-    position: relative;
-}
+  #svgContainer {
+            height: calc(100% - 50px); /* Adjust based on your button container height */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f9f9f9;
+        }
 
 svg {
     width: 100%;
