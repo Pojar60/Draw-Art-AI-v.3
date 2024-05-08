@@ -3,7 +3,11 @@ body, html {
     height: 100%;
     overflow: hidden;
 }
-
+#mobile-svg {
+    width: 100%; /* Ширина 100% от родительского элемента */
+    height: auto; /* Высота изменяется автоматически */
+    display: block; /* Убирает лишние отступы внизу элемента */
+}
   #svgContainer {
             height: calc(100% - 50px); /* Adjust based on your button container height */
             overflow: hidden;

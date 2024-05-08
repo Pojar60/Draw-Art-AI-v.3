@@ -38,6 +38,6 @@ public class WebViewActivity extends AppCompatActivity {
 
 
 
-        webView.loadUrl("file:///android_asset/index_6.html");
+        webView.loadUrl("file:///android_asset/mobile.html");
     }
 }
