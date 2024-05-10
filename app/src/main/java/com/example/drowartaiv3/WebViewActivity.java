@@ -1,6 +1,7 @@
 package com.example.drowartaiv3;
 
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -39,5 +42,13 @@ public class WebViewActivity extends AppCompatActivity {
 
 
         webView.loadUrl("file:///android_asset/mobile.html");
+
+        FloatingActionButton fabBack = findViewById(R.id.fabBack);
+        fabBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();  // Closes the current activity, returning to the previous one
+            }
+        });
     }
 }

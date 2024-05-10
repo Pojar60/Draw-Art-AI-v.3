@@ -3,6 +3,9 @@ body, html {
     height: 100%;
     overflow: hidden;
 }
+
+
+
 #mobile-svg {
     width: 100%; /* Ширина 100% от родительского элемента */
     height: auto; /* Высота изменяется автоматически */
