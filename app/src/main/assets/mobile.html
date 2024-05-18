@@ -649,121 +649,66 @@
             data-filled="0">0%
     </button>
 </div>
-<script>
-      // Don't use window.onLoad like this in production, because it can only listen to one function.
-      window.onload = function() {
-        var eventsHandler;
 
-        eventsHandler = {
-          haltEventListeners: ['touchstart', 'touchend', 'touchmove', 'touchleave', 'touchcancel']
-        , init: function(options) {
-            var instance = options.instance
-              , initialScale = 1
-              , pannedX = 0
-              , pannedY = 0
-
-            // Init Hammer
-            // Listen only for pointer and touch events
-            this.hammer = Hammer(options.svgElement, {
-              inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput
-            })
-
-            // Enable pinch
-            this.hammer.get('pinch').set({enable: true})
-
-            // Handle double tap
-            this.hammer.on('doubletap', function(ev){
-              instance.zoomIn()
-            })
-
-            // Handle pan
-            this.hammer.on('panstart panmove', function(ev){
-              // On pan start reset panned variables
-              if (ev.type === 'panstart') {
-                pannedX = 0
-                pannedY = 0
-              }
-
-              // Pan only the difference
-              instance.panBy({x: ev.deltaX - pannedX, y: ev.deltaY - pannedY})
-              pannedX = ev.deltaX
-              pannedY = ev.deltaY
-            })
-
-            // Handle pinch
-            this.hammer.on('pinchstart pinchmove', function(ev){
-              // On pinch start remember initial zoom
-              if (ev.type === 'pinchstart') {
-                initialScale = instance.getZoom()
-                instance.zoomAtPoint(initialScale * ev.scale, {x: ev.center.x, y: ev.center.y})
-              }
-
-              instance.zoomAtPoint(initialScale * ev.scale, {x: ev.center.x, y: ev.center.y})
-            })
-
-            // Prevent moving the page on some devices when panning over SVG
-            options.svgElement.addEventListener('touchmove', function(e){ e.preventDefault(); });
-          }
-
-        , destroy: function(){
-            this.hammer.destroy()
-          }
-        }
-
-        // Expose to window namespace for testing purposes
-        window.panZoom = svgPanZoom('#mobile-svg', {
-          zoomEnabled: true
-        , controlIconsEnabled: true
-        , fit: 1
-        , center: 1
-        , customEventsHandler: eventsHandler
-        });
-      };
-    </script>
 <!--<script src="script.js"></script>-->
 <script>
 
-    let selectedColor = '';
+    
 
-    document.querySelectorAll('.color-button').forEach(button => {
+    document.addEventListener('DOMContentLoaded', function() {
+    const colorButtons = document.querySelectorAll('.color-button');
+    let selectedColor = ''; // Хранение выбранного цвета в RGB
+
+    function hexToRGB(hex) {
+        // Убедимся, что hex - строка и начинается с #
+        if (hex.indexOf('#') === 0) {
+            hex = hex.slice(1);
+        }
+        // Если длина hex 3 символа, преобразуем в полную форму
+        if (hex.length === 3) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        }
+        // Получаем значения красного, зеленого и синего цветов
+        let r = parseInt(hex.slice(0, 2), 16),
+            g = parseInt(hex.slice(2, 4), 16),
+            b = parseInt(hex.slice(4, 6), 16);
+
+        return `rgb(${r}, ${g}, ${b})`; // Возвращаем строку в формате RGB
+    }
+
+    colorButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Удаление подсветки со всех групп
-            document.querySelectorAll('g').forEach(g => {
-                g.classList.remove('highlighted');
-            });
+            document.querySelectorAll('g').forEach(g => g.classList.remove('highlighted'));
+            const group = document.getElementById(this.id);
+            group.classList.add('highlighted');
+            selectedColor = hexToRGB(this.getAttribute('data-color')); // Преобразование HEX в RGB
+        });
+    });
 
-            const groupId = this.id;
-            const group = document.getElementById(groupId);
-            selectedColor = this.getAttribute('data-color');
-
-            if (group) {
-                group.classList.add('highlighted');
-                updateProgress(button); // Проверка при нажатии на кнопку
+    document.querySelectorAll('g path').forEach(path => {
+        path.addEventListener('click', function() {
+            if (this.parentNode.classList.contains('highlighted')) {
+                this.style.fill = selectedColor; // Применение цвета
+                updateProgress(this.parentNode); // Обновление прогресса
             }
         });
     });
 
-    document.querySelectorAll('svg').forEach(svg => {
-        svg.addEventListener('click', function(event) {
-            if (event.target.parentElement.classList.contains('highlighted') && event.target.tagName === 'path') {
-                event.target.style.fill = selectedColor;
-                event.target.style.stroke = selectedColor;
-                updateProgress(document.querySelector(`.color-button[id="${event.target.parentElement.id}"]`)); // Проверка после перекрашивания
-            }
-        });
-    });
-
-    function updateProgress(button) {
-        const group = document.getElementById(button.id);
+    function updateProgress(group) {
         const paths = group.querySelectorAll('path');
         const total = paths.length;
-        const filled = Array.from(paths).filter(path => path.style.fill.toUpperCase() === button.getAttribute('data-color').toUpperCase()).length;
+        const filled = Array.from(paths).filter(p => p.style.fill === selectedColor).length;
         const percentage = Math.round((filled / total) * 100);
 
-        console.log(`Progress: ${percentage}% filled`); // Добавлено для отладки
-        button.setAttribute('data-filled', filled);
-        button.textContent = `${percentage}%`;
+        const button = document.querySelector(`.color-button[id="${group.id}"]`);
+        if (button) {
+            button.textContent = `${percentage}%`;
+        }
     }
+});
+
+
+   
 </script>
 <script src="script.js" defer></script>
 <!--
