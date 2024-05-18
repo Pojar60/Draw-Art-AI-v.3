@@ -1,5 +1,6 @@
 package com.example.drowartaiv3;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -14,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class WebViewActivity extends AppCompatActivity {
-
+    WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,7 @@ public class WebViewActivity extends AppCompatActivity {
             return insets;
         });
 
-        WebView webView = findViewById(R.id.webview);
+        webView = findViewById(R.id.webview);
         webView.setFocusable(false);
         webView.setFocusableInTouchMode(false);
 
@@ -50,5 +51,23 @@ public class WebViewActivity extends AppCompatActivity {
                 finish();  // Closes the current activity, returning to the previous one
             }
         });
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Сохраняем состояние WebView
+        webView.saveState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Восстанавливаем состояние WebView
+        webView.restoreState(savedInstanceState);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        // Обрабатываем изменение конфигурации, если необходимо
     }
 }
