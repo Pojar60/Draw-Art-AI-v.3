@@ -47,22 +47,7 @@ public class ImageAdapterAnime extends BaseAdapter {
         ImageView gridImage = convertView.findViewById(R.id.dridImage);
 
 
-//        ImageView gridImage = convertView.findViewById(R.id.dridImage);
-//        gridImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-////                Intent intent = new Intent(context, WebViewActivity.class);
-////                // Передайте URL или другие данные в WebViewActivity
-////                intent.putExtra("url", "file:///android_asset/index_6.html"); // Предполагается, что DataClass имеет метод getUrl()
-////
-//                Intent intent = null;
-//                switch (position){
-//                    case 0: intent = new Intent(v.getContext(), WebViewActivity.class);
-//                }
-//                context.startActivity(intent);
-//            }
-//        });
+
         gridImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +55,7 @@ public class ImageAdapterAnime extends BaseAdapter {
                 if (position == 0) {
                     Intent intent = new Intent(context, WebViewActivity.class);
                     // Передача URL в WebViewActivity, если у вас есть необходимые данные
-                    intent.putExtra("url", "file:///android_asset/index_6.html");
+                    intent.putExtra("url", "file:///android_asset/mobile.html");
                     context.startActivity(intent);
                 }
             }
