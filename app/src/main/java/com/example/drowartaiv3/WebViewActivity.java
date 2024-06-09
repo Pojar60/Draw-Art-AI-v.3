@@ -115,12 +115,19 @@ public class WebViewActivity extends AppCompatActivity {
 
     private void saveHtmlContent() {
         webView.evaluateJavascript("(function() { return document.documentElement.outerHTML; })();", html -> {
-            try (FileOutputStream fos = openFileOutput(internalHtmlFileName, MODE_PRIVATE)) {
-                fos.write(html.getBytes());
-                Log.d("WebViewActivity", "HTML content saved to: " + internalHtmlFileName);
-            } catch (IOException e) {
-                Log.e("WebViewActivity", "Error saving HTML content", e);
+            // Удаляем кавычки вокруг строки JSON, которые добавляет evaluateJavascript
+            if (html != null && html.length() > 0) {
+                html = html.substring(1, html.length() - 1).replace("\\u003C", "<").replace("\\u003E", ">").replace("\\\"", "\"").replace("\\n", "\n").replace("\\t", "\t");
+                try (FileOutputStream fos = openFileOutput(internalHtmlFileName, MODE_PRIVATE)) {
+                    fos.write(html.getBytes());
+                    Log.d("WebViewActivity", "HTML content saved to: " + internalHtmlFileName);
+                } catch (IOException e) {
+                    Log.e("WebViewActivity", "Error saving HTML content", e);
+                }
+            } else {
+                Log.e("WebViewActivity", "Received empty HTML content");
             }
         });
     }
+
 }
