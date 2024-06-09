@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)https://bumbu.me/svg-pan-zoom/demo/mobile.html -->
-<html xmlns:border="http://www.w3.org/1999/xhtml"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_NvYkAV"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <script src="svg-pan-zoom.js"></script>
     <script src="hammer.js"></script>
-	
-	<link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="styles.css">
     <style>
         .color-button {
             width: 80px;
@@ -17,30 +16,23 @@
             cursor: pointer;
         }
         .highlighted {
-            fill: #D3D3D3; /* Серый цвет для подсветки */
+            fill: #D3D3D3;
         }
         path:hover { cursor: pointer; }
-    </style>
-    <style>
         path {
-            transition: fill 0.3s ease; /* Плавное изменение цвета за 0.5 секунд */
+            transition: fill 0.3s ease;
             cursor: pointer;
         }
-    </style>
-    <style>
         * {
-            -webkit-tap-highlight-color: transparent; /* Для устройств на базе WebKit, например Android */
-            user-select: none; /* Запрет на выделение текста */
-            -webkit-user-select: none; /* Запрет на выделение текста для iOS и Android */
-
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .svg-pan-zoom-control {
+            display: none !important;
         }
     </style>
-	<style>
-.svg-pan-zoom-control {
-    display: none !important;
-}
-</style>
-  </head>
+</head>
 
   <body>
 
@@ -527,286 +519,130 @@
             <path d="M146.018 172.688 c0 -0.367 -0.133 -0.667 -0.333 -0.667 -0.167 0 -0.333 -0.733 -0.333 -1.667 0 -0.900 -0.133 -1.667 -0.300 -1.667 -0.133 0 -0.367 -1.467 -0.500 -3.234 -0.133 -1.800 -0.400 -3.334 -0.567 -3.467 -0.167 -0.100 -0.400 -3.167 -0.500 -6.801 -0.067 -3.667 -0.300 -6.734 -0.467 -6.834 -0.167 -0.100 -0.400 -1.800 -0.533 -3.767 -0.133 -1.967 -0.367 -3.567 -0.500 -3.567 -0.167 0 -0.300 -1.667 -0.300 -3.700 0 -2.834 -0.100 -3.800 -0.500 -4.167 -0.267 -0.300 -0.500 -1.033 -0.500 -1.667 0 -0.633 -0.133 -1.133 -0.300 -1.133 -0.133 0 -0.333 -2.034 -0.433 -4.534 -0.100 -2.634 -0.300 -4.601 -0.500 -4.734 -0.233 -0.133 -0.400 -2.467 -0.500 -6.001 -0.067 -3.834 -0.233 -5.834 -0.500 -6.001 -0.233 -0.133 -0.467 -1.834 -0.600 -4.167 -0.133 -2.134 -0.400 -3.900 -0.533 -3.900 -0.167 0 -0.300 -1.434 -0.300 -3.200 0 -2.434 0.133 -3.300 0.500 -3.700 0.400 -0.367 1.500 -0.567 4.101 -0.700 1.967 -0.067 3.634 -0.300 3.767 -0.433 0.100 -0.167 2.600 -0.400 5.567 -0.500 2.967 -0.133 5.401 -0.367 5.401 -0.533 0 -0.133 1.133 -0.267 2.500 -0.267 1.434 0 2.500 -0.133 2.500 -0.333 0 -0.167 0.767 -0.333 1.667 -0.333 0.933 0 1.667 0.167 1.667 0.333 0 0.200 0.233 0.333 0.500 0.333 0.400 0 0.500 0.600 0.500 3.300 0 2.100 -0.133 3.367 -0.367 3.434 -0.200 0.067 -0.433 1.367 -0.533 3.034 -0.100 1.600 -0.300 2.900 -0.467 2.900 -0.133 0 -0.333 1.133 -0.467 2.500 -0.133 1.367 -0.367 2.500 -0.500 2.500 -0.133 0 -0.333 1.233 -0.467 2.767 -0.133 1.500 -0.367 2.767 -0.533 2.834 -0.200 0.067 -0.333 0.633 -0.333 1.267 0 0.633 -0.133 1.133 -0.300 1.133 -0.133 0 -0.367 1.834 -0.467 4.034 -0.100 2.234 -0.333 4.134 -0.500 4.267 -0.167 0.100 -0.433 0.700 -0.567 1.300 -0.100 0.567 -0.333 1.067 -0.500 1.067 -0.133 0 -0.333 0.767 -0.400 1.734 -0.100 0.967 -0.367 1.800 -0.567 1.867 -0.200 0.067 -0.367 0.700 -0.367 1.434 0 0.700 -0.133 1.300 -0.300 1.300 -0.133 0 -0.367 0.933 -0.500 2.067 -0.100 1.133 -0.333 2.134 -0.500 2.267 -0.167 0.100 -0.433 1.267 -0.533 2.600 -0.133 1.300 -0.367 2.400 -0.500 2.400 -0.133 0 -0.333 0.933 -0.467 2.100 -0.100 1.133 -0.367 2.134 -0.533 2.167 -0.200 0.067 -0.333 0.333 -0.333 0.600 0 0.267 -0.233 0.567 -0.500 0.667 -0.267 0.133 -0.500 0.567 -0.500 1 0 0.433 -0.133 0.800 -0.300 0.800 -0.133 0 -0.367 1.767 -0.500 3.900 -0.133 2.167 -0.367 4.001 -0.500 4.101 -0.167 0.100 -0.333 1.434 -0.433 2.934 -0.100 1.534 -0.333 2.900 -0.500 3 -0.200 0.133 -0.467 0.933 -0.600 1.800 -0.167 1.067 -0.433 1.634 -0.833 1.767 -0.367 0.133 -0.667 0.667 -0.800 1.500 -0.100 0.733 -0.333 1.334 -0.500 1.334 -0.200 0 -0.433 0.333 -0.567 0.767 -0.400 1.334 -2.134 1.800 -2.134 0.567z"/>
         </g>
 
-<!--        <g id="colors">-->
-<!--            <text x="7" y="553" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">1) #201816-->
-<!--            </text>-->
-<!--            <text x="7" y="560" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">2) #3F362B-->
-<!--            </text>-->
-<!--            <text x="7" y="567" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">3) #743C26-->
-<!--            </text>-->
-<!--            <text x="7" y="573" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">4) #514743-->
-<!--            </text>-->
-<!--            <text x="7" y="580" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">5) #6C5754-->
-<!--            </text>-->
-<!--            <text x="7" y="587" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">6) #C15B10-->
-<!--            </text>-->
-<!--            <text x="7" y="593" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">7) #8C7349-->
-<!--            </text>-->
-<!--            <text x="7" y="600" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">8) #6D7A85-->
-<!--            </text>-->
-<!--            <text x="7" y="607" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">9) #A4816E-->
-<!--            </text>-->
-<!--            <text x="7" y="613" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">10) #BE954F-->
-<!--            </text>-->
-<!--            <text x="7" y="620" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">11) #819BA5-->
-<!--            </text>-->
-<!--            <text x="7" y="627" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">12) #C69289-->
-<!--            </text>-->
-<!--            <text x="7" y="633" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">13) #D3D254-->
-<!--            </text>-->
-<!--            <text x="7" y="640" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">14) #B5B5BB-->
-<!--            </text>-->
-<!--            <text x="7" y="647" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">15) #E0B0A2-->
-<!--            </text>-->
-<!--            <text x="7" y="653" font-size="3.17" fill="#010101" dominant-baseline="middle"-->
-<!--                  text-anchor="start">16) #EAE7E4-->
-<!--            </text>-->
-<!--        </g>-->
-    </svg>
-		
-		<!--
-		<defs>
-          <lineargradient id="linear-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:rgb(56,121,217);stop-opacity:1"></stop>
-            <stop offset="100%" style="stop-color:rgb(138,192,7);stop-opacity:1"></stop>
-          </lineargradient>
-        <style id="svg-pan-zoom-controls-styles" type="text/css">.svg-pan-zoom-control { cursor: pointer; fill: black; fill-opacity: 0.333; } .svg-pan-zoom-control:hover { fill-opacity: 0.8; } .svg-pan-zoom-control-background { fill: white; fill-opacity: 0.5; } .svg-pan-zoom-control-background { fill-opacity: 0.8; }</style></defs>
-        <g fill="none" class="svg-pan-zoom_viewport" transform="matrix(0.8750000040807192,0,0,0.8750000040807192,242.19386512771428,84.71807014828065)" style="transform: matrix(0.875, 0, 0, 0.875, 242.194, 84.7181);">
-          <g stroke="#000" fill="#FFF">
-            <rect x="5" y="5" width="240" height="240" fill="url(#linear-gradient)"></rect>
-            <path d="M 5 5  L 245 245 Z"></path>
-          </g>
-        </g>
-      <g id="svg-pan-zoom-controls" transform="translate(532 344) scale(0.75)" class="svg-pan-zoom-control"><g id="svg-pan-zoom-zoom-in" transform="translate(30.5 5) scale(0.015)" class="svg-pan-zoom-control"><rect x="0" y="0" width="1500" height="1400" class="svg-pan-zoom-control-background"></rect><path d="M1280 576v128q0 26 -19 45t-45 19h-320v320q0 26 -19 45t-45 19h-128q-26 0 -45 -19t-19 -45v-320h-320q-26 0 -45 -19t-19 -45v-128q0 -26 19 -45t45 -19h320v-320q0 -26 19 -45t45 -19h128q26 0 45 19t19 45v320h320q26 0 45 19t19 45zM1536 1120v-960 q0 -119 -84.5 -203.5t-203.5 -84.5h-960q-119 0 -203.5 84.5t-84.5 203.5v960q0 119 84.5 203.5t203.5 84.5h960q119 0 203.5 -84.5t84.5 -203.5z" class="svg-pan-zoom-control-element"></path></g><g id="svg-pan-zoom-reset-pan-zoom" transform="translate(5 35) scale(0.4)" class="svg-pan-zoom-control"><rect x="2" y="2" width="182" height="58" class="svg-pan-zoom-control-background"></rect><path d="M33.051,20.632c-0.742-0.406-1.854-0.609-3.338-0.609h-7.969v9.281h7.769c1.543,0,2.701-0.188,3.473-0.562c1.365-0.656,2.048-1.953,2.048-3.891C35.032,22.757,34.372,21.351,33.051,20.632z" class="svg-pan-zoom-control-element"></path><path d="M170.231,0.5H15.847C7.102,0.5,0.5,5.708,0.5,11.84v38.861C0.5,56.833,7.102,61.5,15.847,61.5h154.384c8.745,0,15.269-4.667,15.269-10.798V11.84C185.5,5.708,178.976,0.5,170.231,0.5z M42.837,48.569h-7.969c-0.219-0.766-0.375-1.383-0.469-1.852c-0.188-0.969-0.289-1.961-0.305-2.977l-0.047-3.211c-0.03-2.203-0.41-3.672-1.142-4.406c-0.732-0.734-2.103-1.102-4.113-1.102h-7.05v13.547h-7.055V14.022h16.524c2.361,0.047,4.178,0.344,5.45,0.891c1.272,0.547,2.351,1.352,3.234,2.414c0.731,0.875,1.31,1.844,1.737,2.906s0.64,2.273,0.64,3.633c0,1.641-0.414,3.254-1.242,4.84s-2.195,2.707-4.102,3.363c1.594,0.641,2.723,1.551,3.387,2.73s0.996,2.98,0.996,5.402v2.32c0,1.578,0.063,2.648,0.19,3.211c0.19,0.891,0.635,1.547,1.333,1.969V48.569z M75.579,48.569h-26.18V14.022h25.336v6.117H56.454v7.336h16.781v6H56.454v8.883h19.125V48.569z M104.497,46.331c-2.44,2.086-5.887,3.129-10.34,3.129c-4.548,0-8.125-1.027-10.731-3.082s-3.909-4.879-3.909-8.473h6.891c0.224,1.578,0.662,2.758,1.316,3.539c1.196,1.422,3.246,2.133,6.15,2.133c1.739,0,3.151-0.188,4.236-0.562c2.058-0.719,3.087-2.055,3.087-4.008c0-1.141-0.504-2.023-1.512-2.648c-1.008-0.609-2.607-1.148-4.796-1.617l-3.74-0.82c-3.676-0.812-6.201-1.695-7.576-2.648c-2.328-1.594-3.492-4.086-3.492-7.477c0-3.094,1.139-5.664,3.417-7.711s5.623-3.07,10.036-3.07c3.685,0,6.829,0.965,9.431,2.895c2.602,1.93,3.966,4.73,4.093,8.402h-6.938c-0.128-2.078-1.057-3.555-2.787-4.43c-1.154-0.578-2.587-0.867-4.301-0.867c-1.907,0-3.428,0.375-4.565,1.125c-1.138,0.75-1.706,1.797-1.706,3.141c0,1.234,0.561,2.156,1.682,2.766c0.721,0.406,2.25,0.883,4.589,1.43l6.063,1.43c2.657,0.625,4.648,1.461,5.975,2.508c2.059,1.625,3.089,3.977,3.089,7.055C108.157,41.624,106.937,44.245,104.497,46.331z M139.61,48.569h-26.18V14.022h25.336v6.117h-18.281v7.336h16.781v6h-16.781v8.883h19.125V48.569z M170.337,20.14h-10.336v28.43h-7.266V20.14h-10.383v-6.117h27.984V20.14z" class="svg-pan-zoom-control-element"></path></g><g id="svg-pan-zoom-zoom-out" transform="translate(30.5 70) scale(0.015)" class="svg-pan-zoom-control"><rect x="0" y="0" width="1500" height="1400" class="svg-pan-zoom-control-background"></rect><path d="M1280 576v128q0 26 -19 45t-45 19h-896q-26 0 -45 -19t-19 -45v-128q0 -26 19 -45t45 -19h896q26 0 45 19t19 45zM1536 1120v-960q0 -119 -84.5 -203.5t-203.5 -84.5h-960q-119 0 -203.5 84.5t-84.5 203.5v960q0 119 84.5 203.5t203.5 84.5h960q119 0 203.5 -84.5 t84.5 -203.5z" class="svg-pan-zoom-control-element"></path></g></g></svg>
 
-  -->
+    </svg>
+
   </div>
 
 
 <!-- Кнопки для выбора цвета -->
-<div id="colorPalette" class="scrollmenu">
-    <button id="1" class="color-button" style="background-color: #201816;" data-color="#201816"
-            data-filled="0">0%
-    </button>
-    <button id="2" class="color-button" style="background-color: #3F362B;" data-color="#3F362B"
-            data-filled="0">0%
-    </button>
-    <button id="3" class="color-button" style="background-color: #743C26;" data-color="#743C26"
-            data-filled="0">0%
-    </button>
-    <button id="4" class="color-button" style="background-color: #514743;" data-color="#514743"
-            data-filled="0">0%
-    </button>
-    <button id="5" class="color-button" style="background-color: #6C5754;" data-color="#6C5754"
-            data-filled="0">0%
-    </button>
-    <button id="6" class="color-button" style="background-color: #C15B10;" data-color="#C15B10"
-            data-filled="0">0%
-    </button>
-    <button id="7" class="color-button" style="background-color: #8C7349;" data-color="#8C7349"
-            data-filled="0">0%
-    </button>
-    <button id="8" class="color-button" style="background-color: #6D7A85;" data-color="#6D7A85"
-            data-filled="0">0%
-    </button>
-    <button id="9" class="color-button" style="background-color: #A4816E;" data-color="#A4816E"
-            data-filled="0">0%
-    </button>
-    <button id="10" class="color-button" style="background-color: #BE954F;" data-color="#BE954F"
-            data-filled="0">0%
-    </button>
-    <button id="11" class="color-button" style="background-color: #819BA5;" data-color="#819BA5"
-            data-filled="0">0%
-    </button>
-    <button id="12" class="color-button" style="background-color: #C69289;" data-color="#C69289"
-            data-filled="0">0%
-    </button>
-    <button id="13" class="color-button" style="background-color: #D3D254;" data-color="#D3D254"
-            data-filled="0">0%
-    </button>
-    <button id="14" class="color-button" style="background-color: #B5B5BB;" data-color="#B5B5BB"
-            data-filled="0">0%
-    </button>
-    <button id="15" class="color-button" style="background-color: #E0B0A2;" data-color="#E0B0A2"
-            data-filled="0">0%
-    </button>
-    <button id="16" class="color-button" style="background-color: #EAE7E4;" data-color="#EAE7E4"
-            data-filled="0">0%
-    </button>
-</div>
+  <div id="colorPalette" class="scrollmenu">
+      <button id="1" class="color-button" style="background-color: #201816;" data-color="#201816" data-filled="0">0%</button>
+      <button id="2" class="color-button" style="background-color: #3F362B;" data-color="#3F362B" data-filled="0">0%</button>
+      <button id="3" class="color-button" style="background-color: #743C26;" data-color="#743C26" data-filled="0">0%</button>
+      <button id="4" class="color-button" style="background-color: #514743;" data-color="#514743" data-filled="0">0%</button>
+      <button id="5" class="color-button" style="background-color: #6C5754;" data-color="#6C5754" data-filled="0">0%</button>
+      <button id="6" class="color-button" style="background-color: #C15B10;" data-color="#C15B10" data-filled="0">0%</button>
+      <button id="7" class="color-button" style="background-color: #8C7349;" data-color="#8C7349" data-filled="0">0%</button>
+      <button id="8" class="color-button" style="background-color: #6D7A85;" data-color="#6D7A85" data-filled="0">0%</button>
+      <button id="9" class="color-button" style="background-color: #A4816E;" data-color="#A4816E" data-filled="0">0%</button>
+      <button id="10" class="color-button" style="background-color: #BE954F;" data-color="#BE954F" data-filled="0">0%</button>
+      <button id="11" class="color-button" style="background-color: #819BA5;" data-color="#819BA5" data-filled="0">0%</button>
+      <button id="12" class="color-button" style="background-color: #C69289;" data-color="#C69289" data-filled="0">0%</button>
+      <button id="13" class="color-button" style="background-color: #D3D254;" data-color="#D3D254" data-filled="0">0%</button>
+      <button id="14" class="color-button" style="background-color: #B5B5BB;" data-color="#B5B5BB" data-filled="0">0%</button>
+      <button id="15" class="color-button" style="background-color: #E0B0A2;" data-color="#E0B0A2" data-filled="0">0%</button>
+      <button id="16" class="color-button" style="background-color: #EAE7E4;" data-color="#EAE7E4" data-filled="0">0%</button>
+  </div>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const colorButtons = document.querySelectorAll('.color-button');
+          let selectedColor = '';
 
-<!--<script src="script.js"></script>-->
-<script>
-
-    
-
-    document.addEventListener('DOMContentLoaded', function() {
-    const colorButtons = document.querySelectorAll('.color-button');
-    let selectedColor = ''; // Хранение выбранного цвета в RGB
-
-    function hexToRGB(hex) {
-        // Убедимся, что hex - строка и начинается с #
-        if (hex.indexOf('#') === 0) {
-            hex = hex.slice(1);
-        }
-        // Если длина hex 3 символа, преобразуем в полную форму
-        if (hex.length === 3) {
-            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-        }
-        // Получаем значения красного, зеленого и синего цветов
-        let r = parseInt(hex.slice(0, 2), 16),
-            g = parseInt(hex.slice(2, 4), 16),
-            b = parseInt(hex.slice(4, 6), 16);
-
-        return `rgb(${r}, ${g}, ${b})`; // Возвращаем строку в формате RGB
-    }
-
-    colorButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            document.querySelectorAll('g').forEach(g => g.classList.remove('highlighted'));
-            const group = document.getElementById(this.id);
-            group.classList.add('highlighted');
-            selectedColor = hexToRGB(this.getAttribute('data-color')); // Преобразование HEX в RGB
-        });
-    });
-
-    document.querySelectorAll('g path').forEach(path => {
-        path.addEventListener('click', function() {
-            if (this.parentNode.classList.contains('highlighted')) {
-                this.style.fill = selectedColor; // Применение цвета
-                updateProgress(this.parentNode); // Обновление прогресса
-            }
-        });
-    });
-
-    function updateProgress(group) {
-        const paths = group.querySelectorAll('path');
-        const total = paths.length;
-        const filled = Array.from(paths).filter(p => p.style.fill === selectedColor).length;
-        const percentage = Math.round((filled / total) * 100);
-
-        const button = document.querySelector(`.color-button[id="${group.id}"]`);
-        if (button) {
-            button.textContent = `${percentage}%`;
-        }
-    }
-});
-
-
-   
-</script>
-<script src="script.js" defer></script>
-<!--
-<script>
-      // Don't use window.onLoad like this in production, because it can only listen to one function.
-      window.onload = function() {
-        // Expose to window namespase for testing purposes
-        window.zoomTiger = svgPanZoom('#demo-tiger', {
-          zoomEnabled: true,
-          controlIconsEnabled: true,
-          fit: true,
-          center: true,
-          // viewportSelector: document.getElementById('demo-tiger').querySelector('#g4') // this option will make library to misbehave. Viewport should have no transform attribute
-        });
-
-        document.getElementById('enable').addEventListener('click', function() {
-          window.zoomTiger.enableControlIcons();
-        })
-        document.getElementById('disable').addEventListener('click', function() {
-          window.zoomTiger.disableControlIcons();
-        })
-      };
-    </script>
-
--->
-    <script>
-      // Don't use window.onLoad like this in production, because it can only listen to one function.
-      window.onload = function() {
-        var eventsHandler;
-
-        eventsHandler = {
-          haltEventListeners: ['touchstart', 'touchend', 'touchmove', 'touchleave', 'touchcancel']
-        , init: function(options) {
-            var instance = options.instance
-              , initialScale = 1
-              , pannedX = 0
-              , pannedY = 0
-
-            // Init Hammer
-            // Listen only for pointer and touch events
-            this.hammer = Hammer(options.svgElement, {
-              inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput
-            })
-
-            // Enable pinch
-            this.hammer.get('pinch').set({enable: true})
-
-            // Handle double tap
-            this.hammer.on('doubletap', function(ev){
-              instance.zoomIn()
-            })
-
-            // Handle pan
-            this.hammer.on('panstart panmove', function(ev){
-              // On pan start reset panned variables
-              if (ev.type === 'panstart') {
-                pannedX = 0
-                pannedY = 0
+          function hexToRGB(hex) {
+              if (hex.indexOf('#') === 0) {
+                  hex = hex.slice(1);
               }
-
-              // Pan only the difference
-              instance.panBy({x: ev.deltaX - pannedX, y: ev.deltaY - pannedY})
-              pannedX = ev.deltaX
-              pannedY = ev.deltaY
-            })
-
-            // Handle pinch
-            this.hammer.on('pinchstart pinchmove', function(ev){
-              // On pinch start remember initial zoom
-              if (ev.type === 'pinchstart') {
-                initialScale = instance.getZoom()
-                instance.zoomAtPoint(initialScale * ev.scale, {x: ev.center.x, y: ev.center.y})
+              if (hex.length === 3) {
+                  hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
               }
-
-              instance.zoomAtPoint(initialScale * ev.scale, {x: ev.center.x, y: ev.center.y})
-            })
-
-            // Prevent moving the page on some devices when panning over SVG
-            options.svgElement.addEventListener('touchmove', function(e){ e.preventDefault(); });
+              let r = parseInt(hex.slice(0, 2), 16),
+                  g = parseInt(hex.slice(2, 4), 16),
+                  b = parseInt(hex.slice(4, 6), 16);
+              return `rgb(${r}, ${g}, ${b})`;
           }
 
-        , destroy: function(){
-            this.hammer.destroy()
+          colorButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                  document.querySelectorAll('g').forEach(g => g.classList.remove('highlighted'));
+                  const group = document.getElementById(this.id);
+                  group.classList.add('highlighted');
+                  selectedColor = hexToRGB(this.getAttribute('data-color'));
+              });
+          });
+
+          document.querySelectorAll('g path').forEach(path => {
+              path.addEventListener('click', function() {
+                  if (this.parentNode.classList.contains('highlighted')) {
+                      this.style.fill = selectedColor;
+                      updateProgress(this.parentNode);
+                  }
+              });
+          });
+
+          function updateProgress(group) {
+              const paths = group.querySelectorAll('path');
+              const total = paths.length;
+              const filled = Array.from(paths).filter(p => p.style.fill === selectedColor).length;
+              const percentage = Math.round((filled / total) * 100);
+              const button = document.querySelector(`.color-button[id="${group.id}"]`);
+              if (button) {
+                  button.textContent = `${percentage}%`;
+              }
           }
-        }
+      });
+  </script>
+  <script src="script.js" defer></script>
+  <script>
+      window.onload = function() {
+          var eventsHandler = {
+              haltEventListeners: ['touchstart', 'touchend', 'touchmove', 'touchleave', 'touchcancel'],
+              init: function(options) {
+                  var instance = options.instance,
+                      initialScale = 1,
+                      pannedX = 0,
+                      pannedY = 0;
+                  this.hammer = Hammer(options.svgElement, {
+                      inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput
+                  });
+                  this.hammer.get('pinch').set({ enable: true });
+                  this.hammer.on('doubletap', function(ev) {
+                      instance.zoomIn();
+                  });
+                  this.hammer.on('panstart panmove', function(ev) {
+                      if (ev.type === 'panstart') {
+                          pannedX = 0;
+                          pannedY = 0;
+                      }
+                      instance.panBy({ x: ev.deltaX - pannedX, y: ev.deltaY - pannedY });
+                      pannedX = ev.deltaX;
+                      pannedY = ev.deltaY;
+                  });
+                  this.hammer.on('pinchstart pinchmove', function(ev) {
+                      if (ev.type === 'pinchstart') {
+                          initialScale = instance.getZoom();
+                          instance.zoomAtPoint(initialScale * ev.scale, { x: ev.center.x, y: ev.center.y });
+                      }
+                      instance.zoomAtPoint(initialScale * ev.scale, { x: ev.center.x, y: ev.center.y });
+                  });
+                  options.svgElement.addEventListener('touchmove', function(e) {
+                      e.preventDefault();
+                  });
+              },
+              destroy: function() {
+                  this.hammer.destroy();
+              }
+          };
 
-        // Expose to window namespace for testing purposes
-        window.panZoom = svgPanZoom('#mobile-svg', {
-          zoomEnabled: true
-        , controlIconsEnabled: false
-        , fit: 1
-        , center: 1
-        , customEventsHandler: eventsHandler
-        });
+          // Expose to window namespace for testing purposes
+          window.panZoom = svgPanZoom('#mobile-svg', {
+              zoomEnabled: true,
+              controlIconsEnabled: false,
+              fit: 1,
+              center: 1,
+              customEventsHandler: eventsHandler
+          });
       };
-    </script>
-
-
-
-
-</body></html>
+  </script>
+  </body>
+</html>
